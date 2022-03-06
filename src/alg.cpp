@@ -20,7 +20,7 @@ double calcItem(double x, uint16_t n) { return pown(x, n) / fact(n); }
 
 double expn(double x, uint16_t count) {
   double ex = 0;
-  for (int n = 0; n < count; n++) {
+  for (int n = 0; n <= count; n++) {
     ex = ex + (pown(x, n) / fact(n));
   }
   return ex;
@@ -43,6 +43,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   long double cos = 0;
   int n = 0;
+  if (x == 0) return 1;
   for (uint64_t i = 1; i <= count; i++) {
     if (i % 2 != 0) {
       cos = cos + (pown(x, n) / fact(n));

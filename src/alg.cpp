@@ -43,7 +43,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double cos = 1;
   int n = 2;
-  for (uint64_t i = 1; i <= count; i++) {
+  for (uint64_t i = 1; i < count; i++) {
     if (i % 2 != 0) {
       cos = cos - (pown(x, n) / fact(n));
     } else {

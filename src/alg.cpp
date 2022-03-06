@@ -41,14 +41,13 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  long double cos = 0;
-  int n = 0;
-  if (x == 0) return 1;
+  double cos = 1;
+  int n = 2;
   for (uint64_t i = 1; i <= count; i++) {
     if (i % 2 != 0) {
-      cos = cos + (pown(x, n) / fact(n));
-    } else {
       cos = cos - (pown(x, n) / fact(n));
+    } else {
+      cos = cos + (pown(x, n) / fact(n));
     }
     n = n + 2;
   }
